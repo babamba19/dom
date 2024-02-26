@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lightbox</title>
+    <link rel="stylesheet" href="css/lightbox.css">
+</head>
+<body>
+    <div class="row">
+        <ul>
+            <li><img src="images/tree-1-thumb.jpg" alt="나무" class="pic" data-src="images/tree-1.jpg"></li>
+            <li><img src="images/tree-2-thumb.jpg" alt="나무" class="pic" data-src="images/tree-2.jpg"></li>
+            <li><img src="images/tree-3-thumb.jpg" alt="나무" class="pic" data-src="images/tree-3.jpg"></li>
+            <li><img src="images/tree-4-thumb.jpg" alt="나무" class="pic" data-src="images/tree-4.jpg"></li>
+            <li><img src="images/tree-5-thumb.jpg" alt="나무" class="pic" data-src="images/tree-5.jpg"></li>
+            <li><img src="images/tree-6-thumb.jpg" alt="나무" class="pic" data-src="images/tree-6.jpg"></li>
+        </ul>
+    </div>
+  <div id="lightbox">
+    <img src="images/tree-1.jpg" alt="나무" id="lightboxImage">
+  </div>
+  <script>
+    let pics = document.getElementsByClassName("pic")
+    let lightBox = document.getElementById("lightbox")
+    let lightboxImage = document.getElementById("lightboxImage")
+    for(let i= 0 ; i < pics.length; i++){
+        pics[i].addEventListener("click", function shouLightbox(){
+            let bigLocation = this.getAttribute("data-src");
+            lightboxImage.setAttribute("src" , bigLocation)
+            lightBox.style.display = "block"
+        })
+    }
+    lightBox.onclick = function(){
+        lightBox.style.display = "none"
+    }
+  </script>
+</body>
+</html>

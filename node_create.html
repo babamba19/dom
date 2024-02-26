@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+  lang="ko\
+
+"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>할일 목록</h1>
+      <p>할일을 기록해주세요</p>
+      <p>공부가 끝난것은 클릭해서 삭제 해 주세요</p>
+      <form>
+        <input type="text" id="subject" autofocus />
+        <button onclick="newRegister(); return false">추가</button>
+        <hr />
+        <ul id="itemList">
+          <!-- js 출력 -->
+        </ul>
+      </form>
+    </div>
+    <script>
+      function newRegister() {
+        let newItem = document.createElement("li"); //요소노드 만들기
+        let subject = document.getElementById("subject"); //폼의 텍스트 필드 입력내용
+        let newText = document.createTextNode(subject.value); //텍스트 필드의 값을 텍스트 노드에 만들기
+        newItem.appendChild(newText); //텍스트 노드를 요소 노드의 자식 노드로 추가
+        let itemList = document.querySelector("#itemList"); //웹 문서에서 부모 노드 가져오기
+        itemList.insertBefore(newItem, itemList.childNodes[0]);
+        // itemList.appendChild(newText)
+        subject.value = ""; //글자를 입력하고 추가하면 텍스트필드에 초기화
+        let items = document.querySelectorAll("li"); //모든 li 항목을 가져오기
+        for (let i = 0; i < items.length; i++) {
+          items[i].addEventListener("click", function () {
+            if (this.parentNode) {
+              this.parentNode.removeChild(this);
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

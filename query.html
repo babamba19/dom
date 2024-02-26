@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>query 메서드</title>
+</head>
+<body>
+    <div class="box1">
+        <div class="text">text1~~~~~</div>
+        <div class="text">text11111111~~~~~</div>
+        <div class="text">text2~~~~~</div>
+        <div class="text">text2~~~~~</div>
+        <div class="text">text2~~~~~</div>
+    </div>
+    <div class="box2">
+        <div class="text">text3~~~~~</div>
+        <div class="text">text4~~~~~</div>
+    </div>
+    <script>
+        let qu1 = document.querySelector(".box1")
+        console.log(qu1)
+        let quTxt = document.querySelectorAll(".text")
+        console.log(quTxt.length)
+        let quA = document.querySelectorAll(".box1 .text")
+        console.log(quA[1]);
+        // 1. 변수명을 정해서 그 변수명에 quA[1]딤는다
+        let quB = quA[1]
+        // 2. 그 변수명에 스타일 중에 글자색을 레드로 변경
+        quB.style.color = "red"
+        let quD = quA[0]
+        quD.style.color ="blue"
+        let quE = quA[3]
+        quE.style.color ="orange "
+        let quC = document.getElementsByClassName("box1")[0].children
+        console.log(quC);
+    </script>
+</body>
+</html>

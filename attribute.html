@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메서드 가지고 오기</title>
+    <style>
+        .green{
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버</a>
+    <script>
+        const aEl = document.querySelector("a")
+        const href = aEl.getAttribute("href") //속성깂 가져오기
+        // console.log(href);
+        aEl.setAttribute("href" , "http://www.google.com")
+        aEl.innerText = "구글"
+        // console.log(aEl);
+        aEl.setAttribute("target" , "blank")
+        aEl.setAttribute("class" , "green")
+        aEl.setAttribute("data-d" , "google")
+        console.log(aEl)
+        console.log(aEl.dataset)
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 함수</title>
+</head>
+<body>
+   <script>
+    // 1.setInterval
+    function displayTime(){
+        console.log(new Date().toLocaleTimeString())
+    }
+    displayTime()
+    // setInterval(displayTime, 1000)
+    function sayHello(){
+        console.log("hello, world!")
+    }
+    // sayHello()
+    // setInterval(sayHello, 1000)
+    // setInterval() 반복적으로 타이머 실행
+    const intervalId = setInterval(displayTime, 1000)
+    clearInterval(intervalId) //반복타이머를 취소하고 현재 시간을 더이상 출력하지 않음
+    // setTimeout(sayHello, 3000)
+    // setTimeout() 한번만 타이머 실행
+    const timerId = setTimeout(sayHello, 3000)
+    clearTimeout(timerId) //한번타이머 취소
+   </script>
+</body>
+</html>

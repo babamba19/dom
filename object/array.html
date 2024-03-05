@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array객체</title>
+</head>
+<body>
+    <script>
+        // Array객체 인스턴스 만들기 - 초기값이 없는 경우
+        var numbers = new Array() //배열의 크기를 지정하지 않음
+        console.log(numbers);
+        var numbers = new Array(4) //배열의 크기를 지정
+        console.log(numbers);
+        var numbers = ["one","two","three","four"] //배열 선언
+        console.log(numbers);
+        var numbers = Array("one","two","three","four") //Array객체를 사용한 배열 선언
+        // console.log(numbers.length);
+        for(i=0 ; i<numbers.length; i++){
+            document.write(`<p> ${numbers[i]}</p>`)
+        }
+    </script>
+</body>
+</html>

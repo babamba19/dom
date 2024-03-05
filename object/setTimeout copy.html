@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머 함수 예제 - 증가,감소</title>
+  </head>
+  <body> 
+    <h1>일정 시간 간격으로 값을 증가시키기</h1>
+    <button onclick="clearInterval(auto_1)">증가 정지</button>
+    <button onclick="clearInterval(auto_2)">감소 정지</button>
+    <!-- 값을 출력할 div 요소 -->
+    <div id="addNum"></div>
+    <div id="subNum"></div>
+    <script>
+      let addNum = 0;
+      let subNum = 1000;
+      // 증가하는 함수
+      let auto_1 = setInterval(function () {
+        addNum++;
+        document.querySelector("#addNum").innerHTML = `addnum: ${addNum}<br>`
+      }, 2000);
+      // 감소하는 함수
+      let auto_2 = setInterval(function () {
+        subNum--;
+        document.querySelector("#subNum").innerHTML = `subnum: ${subNum}<br>`
+      }, 2000);
+    </script>
+   
+  </body>
+</html>
